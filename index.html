@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moonroot Apothecary</title>
+<meta name="description" content="Moonroot Apothecary bridges wellness and modern medicine with research-backed herbalism. Join the waitlist.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@1,700&display=swap">
+<style>
+  :root{
+    --cream:#FBF7EE;
+    --cream-alt:#F3EBDA;
+    --ink:#2E2A22;
+    --ink-soft:#4A443A;
+    --haint:#5D9A9C;
+    --haint-deep:#4C8385;
+    --haint-soft:#8FB8B0;
+    --haint-pale:#A3C1C7;
+    --gold-1:#8B6B33;
+    --gold-2:#E8C77E;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:'EB Garamond', Georgia, serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--haint-deep);}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
+  .gold-rule{
+    height:2px; width:100%;
+    background:linear-gradient(90deg, transparent, var(--gold-1), var(--gold-2), var(--gold-1), transparent);
+    border:none; opacity:.9;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 32px; max-width:1080px; margin:0 auto;
+  }
+  .brand-mini{ display:flex; align-items:center; gap:12px; }
+  .brand-mini img{ height:38px; width:38px; border-radius:9px; object-fit:cover; display:block; }
+  .brand-mini span{
+    font-family:'Cinzel', serif; font-weight:600; letter-spacing:2px;
+    font-size:20px; color:var(--ink);
+  }
+  nav a{
+    font-family:'Cinzel', serif; font-size:13px; letter-spacing:1.5px;
+    text-decoration:none; color:var(--ink-soft); margin-left:28px;
+  }
+  nav a:hover{ color:var(--haint-deep); }
+  @media (max-width:640px){ nav{ display:none; } }
+
+  /* ---------- hero ---------- */
+  .hero{ position:relative; padding:20px 32px 70px; text-align:center; }
+  .hero-lockup-wrap{ padding:10px 20px 0; }
+  .hero-lockup{
+    max-width:400px; width:100%; height:auto; display:block; margin:0 auto;
+  }
+  .hero-headline{
+    font-family:'Playfair Display'; font-style:italic; font-weight:700;
+    font-size:clamp(30px,4.4vw,44px); color:var(--haint-deep);
+    margin:38px auto 18px; max-width:760px; line-height:1.25;
+  }
+  .hero-sub{
+    font-size:clamp(17px,2.2vw,20px); color:var(--ink-soft);
+    max-width:600px; margin:0 auto 34px; line-height:1.6;
+  }
+  .btn-outline{
+    display:inline-block; font-family:'Cinzel', serif; font-size:14px; letter-spacing:2px;
+    color:var(--ink); text-decoration:none; padding:14px 34px;
+    border:1.5px solid var(--gold-1);
+    background:linear-gradient(0deg, rgba(232,199,126,0.12), rgba(232,199,126,0.12));
+    transition:background .2s ease;
+  }
+  .btn-outline:hover{ background:rgba(232,199,126,0.28); }
+
+  /* ---------- section shell ---------- */
+  section{ padding:78px 0; }
+  .section-alt{ background:var(--cream-alt); }
+  .kicker{
+    font-family:'Cinzel', serif; font-weight:600; font-size:14px;
+    letter-spacing:5px; color:var(--haint-deep); text-align:center; margin:0 0 14px;
+  }
+  .section-title{
+    font-family:'Playfair Display'; font-style:italic; font-weight:700;
+    font-size:clamp(26px,3.6vw,36px); text-align:center; margin:0 0 46px; color:var(--ink);
+  }
+
+  /* ---------- mission / vision ---------- */
+  .mv-grid{
+    display:grid; grid-template-columns:1fr 1px 1fr; gap:56px; align-items:start;
+  }
+  .mv-divider{
+    background:linear-gradient(180deg, transparent, var(--gold-1), var(--gold-2), var(--gold-1), transparent);
+    width:1px; height:100%;
+  }
+  .mv-col{ text-align:center; padding:0 8px; }
+  .mv-label{
+    font-family:'Cinzel', serif; font-weight:600; font-size:16px;
+    letter-spacing:3px; color:var(--haint-deep); margin:0 0 16px;
+  }
+  .mv-col p{ font-size:19px; line-height:1.7; color:var(--ink); margin:0; }
+  @media (max-width:700px){
+    .mv-grid{ grid-template-columns:1fr; gap:40px; }
+    .mv-divider{ display:none; }
+  }
+
+  /* ---------- founder ---------- */
+  .founder-grid{
+    display:grid; grid-template-columns:260px 1fr; gap:56px; align-items:center;
+  }
+  .founder-photo{
+    width:240px; height:240px; border-radius:50%;
+    border:2px solid var(--gold-1); box-shadow:0 0 0 8px var(--cream), 0 0 0 9px var(--haint-pale);
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    background:var(--cream-alt); margin:0 auto; overflow:hidden;
+    font-family:'Cinzel', serif; font-size:14px; letter-spacing:1.5px; color:var(--ink-soft);
+  }
+  .founder-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .founder-name{
+    font-family:'Cinzel', serif; font-weight:600; font-size:26px; letter-spacing:1px;
+    margin:0 0 4px; color:var(--ink);
+  }
+  .founder-role{
+    font-style:italic; color:var(--haint-deep); margin:0 0 22px; font-size:18px;
+  }
+  .founder-bio{
+    font-size:19px; line-height:1.75; color:var(--ink-soft); margin:0 0 18px;
+  }
+  .founder-bio:last-of-type{ margin-bottom:0; }
+  .founder-bio .fill-note{
+    display:block; margin-top:14px; font-family:'Cinzel', serif; font-size:12px;
+    letter-spacing:2px; color:var(--haint-soft); font-style:normal;
+  }
+  @media (max-width:700px){
+    .founder-grid{ grid-template-columns:1fr; text-align:center; }
+  }
+
+  /* ---------- growing / product direction ---------- */
+  .grow-lead{
+    max-width:680px; margin:0 auto 54px; text-align:center;
+    font-size:19px; line-height:1.7; color:var(--ink-soft);
+  }
+  .grow-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:36px;
+  }
+  .grow-card{
+    text-align:center; background:var(--cream);
+    border:1px solid var(--haint-pale); padding:38px 26px 30px;
+  }
+  .grow-card svg{ height:120px; width:auto; margin-bottom:6px; }
+  .grow-name{
+    font-family:'Cinzel', serif; font-weight:600; font-size:24px;
+    letter-spacing:1px; margin:14px 0 16px; color:var(--ink);
+  }
+  .grow-fact{
+    font-size:16px; line-height:1.6; color:var(--ink-soft); margin:0 0 20px; min-height:76px;
+  }
+  .grow-tag{
+    display:inline-block; font-family:'Cinzel', serif; font-size:11px; letter-spacing:1.5px;
+    color:var(--ink-soft); border-top:1px solid var(--gold-1); border-bottom:1px solid var(--gold-1);
+    padding:7px 14px;
+  }
+  .grow-note{
+    text-align:center; max-width:560px; margin:48px auto 0; font-style:italic;
+    color:var(--haint-deep); font-size:17px;
+  }
+  @media (max-width:820px){
+    .grow-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- local-grown highlight strip ---------- */
+  .local-strip{
+    margin:44px auto 0; max-width:720px;
+    border:1px solid var(--gold-1); background:rgba(232,199,126,0.1);
+    padding:26px 32px; text-align:center;
+  }
+  .local-strip .kicker{ margin-bottom:10px; }
+  .local-strip p{ font-size:16px; line-height:1.65; color:var(--ink); margin:0; }
+  .local-strip strong{ color:var(--haint-deep); font-weight:600; }
+
+  /* ---------- waitlist (primary, high-visibility band) ---------- */
+  .waitlist-band{
+    background:linear-gradient(160deg, var(--haint-deep), var(--haint));
+    color:#FBF7EE; text-align:center; padding:90px 32px;
+    position:relative; overflow:hidden;
+  }
+  .waitlist-band::before, .waitlist-band::after{
+    content:""; position:absolute; left:50%; top:50%;
+    width:640px; height:640px; margin:-320px 0 0 -320px;
+    border:1px solid rgba(251,247,238,0.15); border-radius:50%;
+  }
+  .waitlist-band::after{ width:820px; height:820px; margin:-410px 0 0 -410px; }
+  .waitlist-inner{ position:relative; max-width:560px; margin:0 auto; }
+  .waitlist-kicker{
+    font-family:'Cinzel', serif; font-size:13px; letter-spacing:4px;
+    color:var(--gold-2); margin:0 0 18px;
+  }
+  .waitlist-title{
+    font-family:'Playfair Display'; font-style:italic; font-weight:700;
+    font-size:clamp(30px,4.6vw,44px); margin:0 0 18px;
+  }
+  .waitlist-sub{
+    font-size:19px; line-height:1.65; color:rgba(251,247,238,0.9); margin:0 0 36px;
+  }
+  .signup-row{
+    display:flex; gap:12px; max-width:440px; margin:0 auto; flex-wrap:wrap; justify-content:center;
+  }
+  .signup-row input[type=email]{
+    flex:1 1 240px; padding:15px 18px; font-family:'EB Garamond'; font-size:17px;
+    border:1.5px solid rgba(251,247,238,0.5); background:rgba(251,247,238,0.08);
+    color:#FBF7EE; outline:none;
+  }
+  .signup-row input[type=email]::placeholder{ color:rgba(251,247,238,0.6); }
+  .btn-gold{
+    font-family:'Cinzel', serif; font-size:14px; letter-spacing:2px; font-weight:600;
+    color:var(--ink); border:none; padding:0 28px;
+    background:linear-gradient(120deg, var(--gold-2), var(--gold-1));
+    cursor:pointer;
+  }
+  .btn-gold:disabled{ opacity:0.7; cursor:default; }
+  .waitlist-fine{
+    font-size:14px; color:rgba(251,247,238,0.65); margin-top:18px; font-style:italic;
+  }
+  .honeypot-field{ position:absolute; left:-9999px; top:-9999px; width:1px; height:1px; overflow:hidden; }
+  .form-msg{ min-height:20px; font-size:14px; margin:14px 0 0; }
+  .waitlist-band .form-msg{ color:rgba(251,247,238,0.9); }
+  .form-msg-ok{ color:#E8C77E !important; font-weight:600; }
+  .form-msg-err{ color:#F3B6A8 !important; }
+
+  /* ---------- newsletter (secondary, quiet card) ---------- */
+  .newsletter-wrap{ display:flex; justify-content:center; }
+  .newsletter-card{
+    max-width:480px; width:100%; text-align:center;
+    border:1px solid var(--haint-pale); background:var(--cream-alt);
+    padding:38px 34px;
+  }
+  .newsletter-card .kicker{ margin-bottom:10px; }
+  .newsletter-title{
+    font-family:'Cinzel', serif; font-weight:600; font-size:20px; letter-spacing:1.5px;
+    margin:0 0 12px; color:var(--ink);
+  }
+  .newsletter-sub{
+    font-size:16px; line-height:1.6; color:var(--ink-soft); margin:0 0 24px;
+  }
+  .newsletter-card .signup-row{ max-width:380px; }
+  .newsletter-card input[type=email]{
+    border:1px solid var(--haint-soft); background:var(--cream);
+    color:var(--ink); padding:12px 14px; font-size:15px;
+  }
+  .newsletter-card input[type=email]::placeholder{ color:var(--ink-soft); opacity:.7; }
+  .btn-quiet{
+    font-family:'Cinzel', serif; font-size:12px; letter-spacing:1.5px; font-weight:600;
+    color:var(--cream); border:none; padding:0 22px;
+    background:var(--haint-deep); cursor:pointer;
+  }
+  .btn-quiet:disabled{ opacity:0.7; cursor:default; }
+  .newsletter-card .form-msg{ color:var(--ink-soft); }
+
+  /* ---------- footer ---------- */
+  footer{ text-align:center; padding:50px 32px 60px; }
+  .footer-mark{ margin-bottom:14px; }
+  .footer-word{
+    font-family:'Cinzel', serif; font-weight:600; letter-spacing:3px; font-size:15px;
+    color:var(--ink-soft); margin:0 0 6px;
+  }
+  .footer-copy{ font-size:13px; color:var(--haint-soft); margin:0; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand-mini">
+    <img src="images/header-mark.png" alt="Moonroot mark">
+    <span>Moonroot</span>
+  </div>
+  <nav>
+    <a href="#mission">Mission</a>
+    <a href="#founder">Our Story</a>
+    <a href="#products">The Line</a>
+    <a href="#waitlist">Join Us</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-lockup-wrap">
+    <img class="hero-lockup" src="images/hero-lockup.png" alt="Moonroot Apothecary: moonwort and crescent moon illustration">
+  </div>
+
+  <h1 class="hero-headline">Rooted in research. Blooming with wonder.</h1>
+  <p class="hero-sub">Moonroot Apothecary bridges time-tested herbal wisdom with modern, evidence-based wellness, grounded in real science, not guesswork.</p>
+  <a class="btn-outline" href="#waitlist">Join the Waitlist</a>
+</section>
+
+<hr class="gold-rule">
+
+<section id="mission">
+  <div class="wrap">
+    <p class="kicker">WHY WE'RE HERE</p>
+    <h2 class="section-title">Mission &amp; Vision</h2>
+    <div class="mv-grid">
+      <div class="mv-col">
+        <p class="mv-label">OUR MISSION</p>
+        <p>To bridge the gap between wellness and modern medicine by bringing you herbal remedies grounded in real, research-backed science, not folklore alone.</p>
+      </div>
+      <div class="mv-divider"></div>
+      <div class="mv-col">
+        <p class="mv-label">OUR VISION</p>
+        <p>A world where reaching for a plant-based remedy feels every bit as trustworthy as anything else on the shelf, because the evidence stands behind it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="founder" class="section-alt">
+  <div class="wrap">
+    <p class="kicker">THE PERSON BEHIND MOONROOT</p>
+    <h2 class="section-title">About the Founder</h2>
+    <div class="founder-grid">
+      <div class="founder-photo"><img src="images/founder-photo.jpg" alt="Indigo, founder of Moonroot Apothecary"></div>
+      <div>
+        <p class="founder-name">Indigo</p>
+        <p class="founder-role">Founder, Moonroot Apothecary &middot; PhD in Bioengineering</p>
+        <p class="founder-bio">My background is in bioengineering: I hold a PhD, and my doctoral research focused on infection control, including work with pre- and probiotic interventions. That's part of why gut health sits at the center of so much of what we grow here. It's not just a wellness trend to me, it's where the science already pointed.</p>
+        <p class="founder-bio">What pulled me toward herbalism was the gap between wellness and modern medicine. There's a long history of herbal traditions now being validated by real research, but there's also a wellness industry generating billions in sales on products that, unlike pharmaceuticals, aren't required to prove their safety or effectiveness to the FDA before reaching the shelf. People deserve to know what they're putting in their bodies. They want community, trust, and autonomy in their own health, so I wanted to build something that brings both traditional plant knowledge and scientific rigor to the table, giving people practices they can actually trust.</p>
+        <p class="founder-bio">Moonroot has grown slower than I first planned. I started building it while adjusting to motherhood and a new job, and I wanted to be intentional rather than rush it. It's coming back now, rooted here in North Texas, herb by herb.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="section-alt" style="padding-top:0;">
+  <div class="wrap">
+    <p class="kicker">THE DIRECTION</p>
+    <h2 class="section-title">What We're Building</h2>
+    <p class="grow-lead">This isn't a finished shelf. It's the direction. We're planning a line of 10-15 herbs, thoughtfully sourced, and three ways to bring them home.</p>
+
+    <div class="grow-grid">
+      <div class="grow-card">
+        <svg viewBox="0 0 100 100" style="color:var(--haint-deep)">
+          <path d="M50,88 C50,60 50,40 50,20" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M50,25 C30,25 16,42 16,62 C40,62 50,48 50,25 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M50,25 C22,29 16,44 16,60" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+        </svg>
+        <p class="grow-name">Loose Leaf Herbs</p>
+        <p class="grow-fact">Single herbs by the sachet or the ounce: the simplest way in. Steep one, get to know it, come back for more.</p>
+        <span class="grow-tag">SACHETS &amp; BY THE OUNCE &middot; FROM $5</span>
+      </div>
+
+      <div class="grow-card">
+        <svg viewBox="0 0 100 100" style="color:var(--haint-deep)">
+          <path d="M22,30 L78,30 L78,86 L22,86 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M22,30 L50,52 L78,30" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="38" cy="66" r="3" fill="currentColor" opacity="0.85"/>
+          <circle cx="50" cy="72" r="3" fill="currentColor" opacity="0.85"/>
+          <circle cx="62" cy="66" r="3" fill="currentColor" opacity="0.85"/>
+        </svg>
+        <p class="grow-name">Custom Seed Kit</p>
+        <p class="grow-fact">Choose 4 to 6 herbs from our growing menu and start your own apothecary garden, picked by you.</p>
+        <span class="grow-tag">CHOOSE YOUR OWN 4-6 &middot; $28-$38</span>
+      </div>
+
+      <div class="grow-card">
+        <svg viewBox="0 0 100 100" style="color:var(--haint-deep)">
+          <circle cx="30" cy="38" r="8" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="70" cy="38" r="8" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="50" cy="72" r="8" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M36,42 L46,66 M64,42 L54,66 M38,38 L62,38" stroke="currentColor" stroke-width="1.5" opacity="0.8"/>
+        </svg>
+        <p class="grow-name">Gut Health Seed Kit</p>
+        <p class="grow-fact">A fixed set, curated by the research on the gut-brain connection, not just what's trendy.</p>
+        <span class="grow-tag">CURATED BY THE SCIENCE &middot; $34-$44</span>
+      </div>
+    </div>
+
+    <div class="local-strip">
+      <p class="kicker" style="margin-bottom:8px;">LOCALLY GROWN &amp; SEASONAL</p>
+      <p><strong>Calendula, chamomile, and lemon balm</strong> are the first three going into our own ground this fall: a limited, seasonal batch we grow ourselves, alongside a wider lineup of thoughtfully sourced herbs.</p>
+    </div>
+
+    <p class="grow-note">None of it's ready yet. This is the direction, not a finished shelf. The waitlist is how you'll know when it's ready to shop.</p>
+  </div>
+</section>
+
+<section id="waitlist" style="padding:0;">
+  <div class="waitlist-band">
+    <div class="waitlist-inner">
+      <p class="waitlist-kicker">COMING SOON</p>
+      <h2 class="waitlist-title">Be the First to Know</h2>
+      <p class="waitlist-sub">We're putting together the full lineup: loose herbs, seed kits, and the ones we grow ourselves. Join the waitlist to be the first to shop when we open.</p>
+      <form class="signup-row" data-signup="waitlist">
+        <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required>
+        <input type="text" name="company" class="honeypot-field" tabindex="-1" autocomplete="off">
+        <button class="btn-gold" type="submit">Join the Waitlist</button>
+      </form>
+      <p class="form-msg" role="status"></p>
+      <p class="waitlist-fine">No spam, just a heads-up when we launch.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap newsletter-wrap">
+    <div class="newsletter-card">
+      <p class="kicker" style="margin-bottom:8px;">SEED TO SHELF</p>
+      <p class="newsletter-title">The Moonroot Almanac</p>
+      <p class="newsletter-sub">A running journal, in post and video, of what we're actually growing: calendula, chamomile, and lemon balm, from seed to shelf. New updates every two weeks.</p>
+      <form class="signup-row" data-signup="newsletter">
+        <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required>
+        <input type="text" name="company" class="honeypot-field" tabindex="-1" autocomplete="off">
+        <button class="btn-quiet" type="submit">Subscribe</button>
+      </form>
+      <p class="form-msg" role="status"></p>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-rule">
+
+<footer>
+  <svg class="footer-mark" width="40" height="44" viewBox="0 0 64 70" style="color:#6FA8AA">
+    <defs>
+      <mask id="fMask">
+        <rect width="64" height="70" fill="white"/>
+        <circle cx="38" cy="16" r="10" fill="black"/>
+      </mask>
+    </defs>
+    <circle cx="32" cy="18" r="12" fill="currentColor" mask="url(#fMask)"/>
+    <path d="M32,30 C29,42 35,54 32,64 C29,54 35,42 32,30 Z" fill="currentColor" opacity="0.85"/>
+  </svg>
+  <p class="footer-word">MOONROOT APOTHECARY</p>
+  <p class="footer-copy">&copy; 2026 Moonroot Apothecary</p>
+</footer>
+
+<script>
+document.querySelectorAll('form[data-signup]').forEach(function (form) {
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var list = form.getAttribute('data-signup');
+    var emailInput = form.querySelector('input[type=email]');
+    var honeypot = form.querySelector('input[name=company]');
+    var button = form.querySelector('button[type=submit]');
+    var msg = form.parentElement.querySelector('.form-msg') || form.querySelector('.form-msg');
+    var email = (emailInput.value || '').trim();
+    var originalText = button.textContent;
+
+    if (!email) return;
+
+    button.disabled = true;
+    button.textContent = 'Sending...';
+    if (msg) { msg.textContent = ''; msg.className = 'form-msg'; }
+
+    try {
+      var res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, list: list, company: honeypot ? honeypot.value : '' })
+      });
+      var data = {};
+      try { data = await res.json(); } catch (err) { /* ignore */ }
+
+      if (res.ok) {
+        emailInput.value = '';
+        if (msg) { msg.textContent = "You're on the list. Thank you!"; msg.className = 'form-msg form-msg-ok'; }
+      } else {
+        if (msg) { msg.textContent = data.error || 'Something went wrong. Please try again.'; msg.className = 'form-msg form-msg-err'; }
+      }
+    } catch (err) {
+      if (msg) { msg.textContent = 'Network error. Please try again.'; msg.className = 'form-msg form-msg-err'; }
+    } finally {
+      button.disabled = false;
+      button.textContent = originalText;
+    }
+  });
+});
+</script>
+</body>
+</html>

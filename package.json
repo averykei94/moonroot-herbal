@@ -1,0 +1,9 @@
+{
+  "name": "moonroot-apothecary",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Moonroot Apothecary landing page — static site with Vercel serverless functions for waitlist and newsletter signups.",
+  "dependencies": {
+    "@upstash/redis": "^1.34.0"
+  }
+}
