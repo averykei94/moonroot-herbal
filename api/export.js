@@ -1,6 +1,5 @@
-const { Redis } = require('@upstash/redis');
+const redis = require('./_redis');
 
-const redis = Redis.fromEnv();
 const VALID_LISTS = ['waitlist', 'newsletter'];
 
 // Private export endpoint so you can pull your signups without a database

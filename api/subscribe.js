@@ -1,6 +1,5 @@
-const { Redis } = require('@upstash/redis');
+const redis = require('./_redis');
 
-const redis = Redis.fromEnv();
 const VALID_LISTS = ['waitlist', 'newsletter'];
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
